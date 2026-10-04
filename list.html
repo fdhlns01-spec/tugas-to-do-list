@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Tugas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <main class="app">
+        <h1 class="app__title">Papan Tugas</h1>
+
+        <!-- Rekap statistik: diperbarui otomatis oleh script.js -->
+        <section class="stats" aria-label="Rekap tugas">
+            <div class="stat stat--total">
+                <span class="stat__number" id="statTotal">0</span>
+                <span class="stat__label">Total Tugas</span>
+            </div>
+            <div class="stat stat--done">
+                <span class="stat__number" id="statDone">0</span>
+                <span class="stat__label">Selesai</span>
+            </div>
+            <div class="stat stat--pending">
+                <span class="stat__number" id="statPending">0</span>
+                <span class="stat__label">Belum Selesai</span>
+            </div>
+        </section>
+
+        <!-- Form input tugas: Enter atau tombol "Tambah" -->
+        <form class="task-form" id="taskForm" novalidate>
+            <input type="text" id="taskInput" placeholder="Apa yang mau kamu kerjakan?" autocomplete="off">
+            <button type="submit" class="task-form__button">Tambah</button>
+        </form>
+        <p class="warning" id="warningMessage" role="alert" hidden></p>
+
+        <ul class="task-list" id="taskList"></ul>
+        <p class="empty" id="emptyMessage">Belum ada tugas. Ketik di atas lalu tekan Enter.</p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
